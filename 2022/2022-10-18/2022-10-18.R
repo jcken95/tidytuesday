@@ -70,13 +70,13 @@ pale_red <- rgb(1, 0, 0, alpha = 0.4)
 dark_red <- rgb(1, 0, 0, alpha = 0.8)
 font_add_google(name = "Libre Baskerville", family = "specimen")
 myfont <- "specimen"
-subtitle <- "Bar chart showing the average number of swear words per episode\nof the 11 'Stranger Things' writers.\nTidy Tuesday 18 Oct 2022 | Data: 8flix |  @_jcken"
+subtitle <- "Bar chart showing the average number swear words per episode for each of the 11 'Stranger Things' writers.\nTidy Tuesday 18 Oct 2022 | Data: 8flix |  @_jcken"
 
 p <- writer_swears %>%
   ggplot(aes(x = initials, y = mean_swears)) +
   geom_col(colour = dark_red, fill = pale_red) +
   xlab("") +
-  ylab("Mean number profanities per episode") +
+  ylab("Mean number swear words per episode") +
   theme_minimal() +
   scale_x_discrete(limits = plotting_order) +
   scale_y_continuous(breaks = c(10, 20, 30), minor_breaks = c(10, 20, 30)) +
@@ -90,7 +90,10 @@ p <- writer_swears %>%
         plot.background = element_rect("grey20"),
         title = element_text(colour = dark_red, family = myfont, face = "bold"),
         plot.title = element_text(size = 22),
-        plot.subtitle = element_text(face = "italic")) +
+        plot.subtitle = element_text(face = "italic", size = 10)) +
   labs(title = "WHICH STRANGER THINGS WRITERS\n USE THE STRONGEST LANGUAGE?",
        subtitle = subtitle) 
 p
+## exporting
+# 8in x 8in .pdf
+# 900px x 900px .png
