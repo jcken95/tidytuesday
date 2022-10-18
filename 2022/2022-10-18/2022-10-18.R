@@ -70,27 +70,28 @@ pale_red <- rgb(1, 0, 0, alpha = 0.4)
 dark_red <- rgb(1, 0, 0, alpha = 0.8)
 font_add_google(name = "Libre Baskerville", family = "specimen")
 myfont <- "specimen"
-subtitle <- "Bar chart showing the average number swear words per episode for each of the 11 'Stranger Things' writers.\nTidy Tuesday 18 Oct 2022 | Data: 8flix |  @_jcken"
-
+subtitle <- "Bar chart showing the average number swear words (per episode)\nfor each of the 11 'Stranger Things' writers.\nTidy Tuesday 18 Oct 2022 | Data: 8flix |  @_jcken"
 p <- writer_swears %>%
   ggplot(aes(x = initials, y = mean_swears)) +
   geom_col(colour = dark_red, fill = pale_red) +
-  xlab("") +
-  ylab("Mean number swear words per episode") +
+  xlab("Writer's initials") +
+  ylab("Average number swear\nwords per episode") +
   theme_minimal() +
   scale_x_discrete(limits = plotting_order) +
   scale_y_continuous(breaks = c(10, 20, 30), minor_breaks = c(10, 20, 30)) +
   theme(axis.text.x = element_text(angle = 45, vjust = 0.6, hjust = 0.8,
                                    colour = dark_red, face = "bold",
-                                   family = myfont),
-        axis.text.y = element_text(color = dark_red),
+                                   family = myfont, size = 14),
+        axis.text.y = element_text(color = dark_red, size = 14),
         panel.grid.major.x = element_blank(),
         panel.grid.major.y = element_line(colour = very_pale_red), #very_pale_red
         panel.background = element_rect(fill = "grey20", colour = "grey20"),
         plot.background = element_rect("grey20"),
         title = element_text(colour = dark_red, family = myfont, face = "bold"),
         plot.title = element_text(size = 22),
-        plot.subtitle = element_text(face = "italic", size = 10)) +
+        plot.subtitle = element_text(face = "italic", size = 14),
+        axis.title.y = element_text(size = 14),
+        axis.title.x = element_text(size = 14)) +
   labs(title = "WHICH STRANGER THINGS WRITERS\n USE THE STRONGEST LANGUAGE?",
        subtitle = subtitle) 
 p
