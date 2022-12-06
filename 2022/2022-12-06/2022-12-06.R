@@ -51,9 +51,9 @@ p <- ggplot(plot_data,
         axis.text = element_text(family = main_font),
         legend.text = element_text(family = main_font, size = 22, hjust = -3),
         legend.title = element_text(family = main_font, size = 22, hjust = 0.1, vjust = -3),
-        axis.title.x = element_text(family = main_font, size = 22),
-        axis.title.y = element_text(family = main_font, size = 22, angle = 90),
-        text = element_text(family = main_font, size = 18))
+        axis.title.x = element_text(family = main_font, size = 22,  hjust = 0.5),
+        axis.title.y = element_text(family = main_font, size = 22, angle = 90, hjust = 0.5),
+        text = element_text(family = main_font, size = 18, hjust = 1))
 
 # save ---
 
