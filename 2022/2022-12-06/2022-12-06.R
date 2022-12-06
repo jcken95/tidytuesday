@@ -28,7 +28,7 @@ manhattan_bb <- tibble(xmin = min(manhattan$latitude), xmax = max(manhattan$lati
 
 # plot ----
 
-subtitle <- "Where elevators are active, their density is mostly constant.\nThe exception is the borough of Manhattan, which has a high elevator density"
+subtitle <- "Where elevators are active, their density is mostly constant.\nThe exception is the borough of Manhattan, which has a high elevator density."
 caption <- "\n#TidyTuesday 6/12/2022 | Data: Elevators | @_jcken"
 p <- ggplot(plot_data,
        aes(x = latitude, y = longitude)) +
