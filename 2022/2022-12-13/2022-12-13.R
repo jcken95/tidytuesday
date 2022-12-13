@@ -115,7 +115,7 @@ data_plot <- ggplot() +
         panel.grid = element_blank(),
         axis.text = element_text(colour = main_col))
 data_plot
-side_text <- "Pukelsheim's 3 sigma rule states a continuous, unimodal random variable is further than 3 standard\ndeviations away from its mean with probability <0.05.\n\nObserved data which are sufficiently far from the AR(1) mean prediciton are highlighted with a bullet.\n\n#TidyTuesday 13/12/2022 | Data: US Census Bureau | @_jcken"
+side_text <- "Pukelsheim's 3 sigma rule states a continuous, unimodal random variable is further than 3 standard\ndeviations away from its mean with probability <0.05.\n\nObserved data which are sufficiently far from the AR(1) mean prediction are highlighted with a bullet.\n\n#TidyTuesday 13/12/2022 | Data: US Census Bureau | @_jcken"
 
 additional_text <- ggplot() +
   annotate("text", x = as.Date("2018-01-01"), y = 30, 
