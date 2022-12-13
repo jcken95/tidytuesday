@@ -92,7 +92,7 @@ data_plot <- ggplot() +
              pch = 19, size = 4, colour = main_col) +
   labs(y = "Year on year\npercentage change",
        x = "Date") +
-  ggtitle("These Unpresendented Times",
+  ggtitle("These Unprecendented Times",
           subtitle = "Year on year percentage change for total USA monthly retail sales") +
   annotate("text", x = as.Date("2019-06-01"), y = 30,
            label = "Observed data +/- 3 std. errs.\nNo predictions are made for\nthe first year of data",
