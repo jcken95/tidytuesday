@@ -98,7 +98,7 @@ data_plot <- ggplot() +
            label = "Observed data +/- 3 std. errs.\nNo predictions are made for\nthe first year of data",
            colour = main_col, family = main_font, size = 8) +
   annotate("text", x = as.Date("2022-01-01"), y = 65,
-           label = "AR(1) model\n mean +/- 3 std. errs.",
+           label = "AR(1) model\n mean +/- 3 std. devs.",
            colour = second_col, family = main_font, size = 8) +
   geom_curve(mapping = aes(x = x1, y = y1, xend = x2, yend = y2),
              data = arrow_data,
