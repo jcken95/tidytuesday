@@ -69,7 +69,7 @@ top_ten_words %>%
   labs(title = "Thesis Wrapped",
           subtitle = "Top ten most used words (adjusting for plurals) in my PhD thesis",
           caption = "#TidyTuesday 03/01/2023 | Data: bring your own! | @_jcken") +
-  xlab("") +
+  xlab("Word Count") +
   ylab("") +
   theme(
     text = element_text(family = main_font, colour = txt),
@@ -79,6 +79,7 @@ top_ten_words %>%
     panel.grid = element_blank(),
     plot.background = element_rect(fill = bg),
     panel.background = element_rect(fill = bg, colour = bg),
+    axis.title.x = element_text(size = 18),
     axis.text.x = element_text(family = main_font, colour = txt, size = 16),
     axis.ticks = element_line(colour = txt)
     )
