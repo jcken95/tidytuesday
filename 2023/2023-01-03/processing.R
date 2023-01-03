@@ -1,6 +1,8 @@
 # processing script
 # expects chapters to be chapters/1.txt, chapters/2.txt etc
 # expects only numbered chapters in chapters/
+# I used detexify chapter1.tex > 1.txt to remove the
+# LaTeX commands from the thesis
 
 set.seed(03012023)
 library(tidyverse)
