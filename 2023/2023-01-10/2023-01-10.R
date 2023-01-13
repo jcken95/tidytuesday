@@ -82,7 +82,7 @@ p <- model_summary %>%
         panel.grid = element_blank(),
         plot.background = element_rect(fill = bg),
         panel.background = element_rect(fill = bg, colour = bg),
-        axis.text.x = element_text(size = 14))
+        axis.text.x = element_text(size = 16))
 # save ----
 
 ggsave("~/tidytuesday/2023/2023-01-10/2023-01-10.png",
