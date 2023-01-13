@@ -46,7 +46,7 @@ model_summary <- lm(how_many ~ ., data = model_data) %>%
 x0 <- max(model_summary$abs_estimate)
 
 title <- "Which habitats attract the most birds?"
-subtitle <- "Mean effect of habitat type on number of observed birds in decending order"
+subtitle <- "Mean effect of habitat type on number of observed birds in descending order"
 
 
 p <- model_summary %>%
