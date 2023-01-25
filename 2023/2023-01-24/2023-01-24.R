@@ -57,13 +57,13 @@ p <- plot_data %>%
   theme_minimal() +
   theme(
     plot.title = element_text(hjust = 0.5, family = main_font, size  = 32), 
-    plot.subtitle = element_text(hjust = 0.5, family = main_font, size = 18, lineheight = 0.5),
+    plot.subtitle = element_text(hjust = 0.5, family = main_font, size = 18, lineheight = 0.3),
     panel.grid = element_blank(),
     plot.background = element_rect(fill = bg_clr),
     text = element_text(colour = text_clr, family = main_font),
     axis.text = element_text(colour = bullet_text_clr, family = main_font, size = 28),
     axis.text.y = element_blank(),
-    axis.title.x = element_text(colour = bullet_text_clr, family = main_font, size = 18, lineheight = 0.5))
+    axis.title.x = element_text(colour = bullet_text_clr, family = main_font, size = 18, lineheight = 0.3))
 
 # save ----
 ggsave(
