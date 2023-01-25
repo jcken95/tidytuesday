@@ -3,7 +3,7 @@
 
 Plot title: "Are Alone players improving?"
 Subtitle: Minumum number of days survived appears to be increasing slightly; maximum days survived shows no clear pattern.
-Tag: #TidyTeusday | Data: Alone | @_jcken
+Tag: #TidyTuesday | Data: Alone | @_jcken
 
 
 Dumbell plot showing the minimum and maximum number of days survived by players in each season of "Alone". Top bar is Season 9, bottom is Season 1. Range of x axis is 0-100. Note that the height of the bars in the dumbbell are equal to the "weights" thus the dumbbell looks like a bar with rounded edges. The widest bar is for season 7 (10-100 days), shortest is season 5 (5-60 days).
