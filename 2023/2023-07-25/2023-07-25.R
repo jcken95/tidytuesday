@@ -2,8 +2,16 @@
 library(tidyverse)
 library(brms)
 library(tidybayes)
+library(showtext)
 options(mc.cores = 2)
 scurvy <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-07-25/scurvy.csv')
+
+# Fonts ----
+
+font_add_google(name = "cormorant garamond",
+                family = "Cormorant+Garamond")
+main_font <- "Cormorant+Garamond"
+showtext_auto()
 
 # Wrangling ----
 
@@ -11,12 +19,6 @@ scurvy <- scurvy %>%
   mutate(treatment = treatment, 
          fit_for_duty = if_else(fit_for_duty_d6  == "1_yes", 1, 0),
          .keep = "none")
-
-
-
-design_matrix = model.matrix(
-  
-)
 
 brm_prior <- c(
   set_prior("normal(0, 1)", class = "b"),
@@ -74,28 +76,39 @@ x_range <- range(midpoint - eps, midpoint + eps)
 
 
 
-plot_data %>% 
+p = plot_data %>% 
   ggplot(aes(y = term, x = effect)) +
   stat_interval(.width = ci_widths) +
   geom_text(aes(x = midpoint, y = term, label = term),
-            nudge_y = 0.4, data = bar_labels) +
+            nudge_y = 0.4, data = bar_labels, family = main_font) +
   xlim(x_range) +
   ylab("") +
   xlab("Posterior estimate of effect size") +
   guides(colour = guide_legend(
     title = "Posterior probability",
     reverse = TRUE,
-    override.aes = list(linewidth = 3)
+    keywidth = 0.5,
+    override.aes = list(linewidth = 2)
   )) +
   ggtitle("Which Scurvy Treatment is Most Effective?",
           subtitle = sub_string) +
   scale_colour_brewer(palette = "Oranges") +
   theme_minimal() +
   theme(
-    plot.title = element_text(hjust = 0.5),
-    plot.subtitle = element_text(hjust = 0.5, margin = margin(t = 10, b = 20)),
+    text = element_text(family = main_font),
+    plot.background = element_rect(fill = "white"),
+    plot.title = element_text(hjust = 0.5, size = 20),
+    plot.subtitle = element_text(hjust = 0.5, margin = margin(t = 10, b = 20),
+                                 lineheight = 0.5),
     panel.grid = element_blank(),
     axis.text.y = element_blank(),
+    axis.text.x = element_text(size = 16),
     legend.position = "bottom"
   )
+ggsave(
+  filename = here::here("2023/2023-07-25/2023-07-25.png"),
+  plot = p,
+  width = 2, height = 4,
+  units = "in",
+)
 
