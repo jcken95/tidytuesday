@@ -1,0 +1,6 @@
+Alt text:
+
+Plot title: Which scury treatment is most effective?
+Subtitle: "In 1757, James Lind applied six treatments to twelve participants in a randomised controlled trial. The plot shows posterior estimates of logistic regression coefficients, where the covariate is the treatment, and the outcome is whether or not the participant was deemed fit to work after six days of treatment. Posterior estimates indicate treatments are typically ineffective, but there is some evidence to suggest the citrus treatment worked!"
+
+The graph shows 6 horizontal bars, representing the posterior distribution of logistic regression parameters. The bars (in order) are titled "vinegar", "sea water", "purgative mixture", "dilute sulfuric acid", "citrus", "cider". The bars are segmented to show 43%, 58%, 83% and 98% posterior intervals for each coefficient. The first 4 treatments all have a similar posterior distributions; the are centered at about -1.8 with the 98% intervals spanning from about -4 to 0.5. The interval for citrus spans about -3 to 1, centered at about -1. The cider band is centered at about -1.8, but spans the a range from about -3 to 0. The posterior distributions are coloured orange, with the most central segements being dark orange, fading to near white for the larger posterior probabilities.
