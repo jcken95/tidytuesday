@@ -65,8 +65,7 @@ plot_data = fit %>%
 # plot ----
 
 ci_widths <- c(43, 58, 83, 98) / 100
-sub_string <- str_wrap("In 1757, James Lind applied six treatments to twelve participants in a randomised controlled trial. The plot shows posterior estiamtes of logistic regression coefficients, where the covariate is the treatment, and the outcome is whether or not the participant was deemed fit to work after six days of treatment. Posterior estimates indicate treatmetns are typically ineffective, but there is some evidence to suggest the citrus treatment worked!")
-
+sub_string <- str_wrap("In 1757, James Lind applied six treatments to twelve participants in a randomised controlled trial. The plot shows posterior estimates of logistic regression coefficients, where the covariate is the treatment, and the outcome is whether or not the participant was deemed fit to work after six days of treatment. Posterior estimates indicate treatments are typically ineffective, but there is some evidence to suggest the citrus treatment worked!")
 bar_labels = plot_data %>%
   select(term) %>%
   distinct()
